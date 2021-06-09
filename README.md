@@ -1,5 +1,5 @@
 # Russian Arctic Vegetation Archive
-## The project is commercial so the publication of open source code is banned.
+## The project is commercial so the publication of open source code is banned
 
 The Arctic Vegetation Archive (AVA) is an international effort to assemble circumpolar Arctic vegetation plot data into a publically accessible web-based archive. 
 
@@ -9,6 +9,7 @@ https://avarus.space/
 
 ## Technologies
 
+Technologies I worked with in the project:
 Django, Django CMS, Bootstrap, JS, JQuery, R, API YandexMap, Docker
 
 ## About
