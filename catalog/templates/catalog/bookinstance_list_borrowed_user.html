@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<style>
+    label {
+        margin-right: 15px;
+    }
+    .list-group{
+        overflow-y:scroll; overflow-x:hidden; max-height: 300px
+    }
+</style>
+<div class="container emp-profile">
+    <div class="row row-head">
+        <div class="
+                col-5
+                col-sm-3
+                col-md-3
+                col-lg-3">
+            <div class="profile-work">
+                {% if   user.is_authenticated %}
+                <p>{% trans "HOME" %}</p>
+                <a href="{% url 'index' %}">{% trans "Profile" %}</a>
+                <p>{% trans "RECEIVED DATASETS" %}</p>
+                <a href="{% url 'my-borrowed' %}">{% trans "My datasets" %}</a><br/>
+                <a href="{% url 'my-requests' %}">{% trans "My requests" %}</a><br/>
+                <p>{% trans "LOGOUT" %}</p>
+                <a href="{% url 'logout'%}">{% trans "Exit" %}</a>
+                {% endif %}
+                {% if user.is_staff %}
+                <p>{% trans "STAFF" %}</p>
+                <a href="{% url 'books' %}">{% trans "All datasets" %}</a><br/>
+                <a href="{% url 'all-borrowed' %}">{% trans "All borrowed" %}</a><br/>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-12
+                col-sm-9
+                col-md-9
+                col-lg-5">
+            <h5 class="card-title">{% trans "Available datasets" %}</h5>
+            <hr>
+            {% if book_list or bookinstance_list %}
+            <div class="list-group">
+                {% for book in book_list %}
+                <label  class="list-group-item">
+                    <a style="text-decoration: none" href="{{ book.get_absolute_url }}">{{ book.title }}</a>
+                </label>
+                {% endfor %}
+                {% for bookinst in bookinstance_list %}
+                <label class="list-group-item ">
+                    <a style="text-decoration: none" href="{% url 'book-detail' bookinst.book.pk %}">{{bookinst.book.title}}</a>
+                </label>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p class="text-success">{% trans "There are no available datasets" %}</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+</div>
+
+{% endblock %}

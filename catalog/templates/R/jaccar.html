@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+{% load cms_tags menu_tags sekizai_tags %} {% load i18n %}
+{% block content %}
+{% placeholder "content" %}
+
+<head>
+     <link rel="stylesheet" type="text/css" href="../../media/statistics.css">
+    <link rel="stylesheet" type="text/css" href="../../../media/analysis.css">
+</head>
+<body>
+<div class="container_analysis">
+    <div class="row justify-content-center">
+        <div style="display:block" id="result" class="col-xs-12
+                col-sm-12
+                col-md-12
+                col-lg-4">
+            <div  class="card card-info">
+                <div class="card-body">
+                    <h5 class="card-title">{% trans "The Jacquard method" %}</h5>
+                    <p class="card-text">
+                        {% trans "Select available dataset from the list" %}</p>
+                    <div  style="display:block" class="list-group" id="myTab" role="tablist">
+                        <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center active" data-bs-toggle="list"  role="tab">{% trans "Datasets" %}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card card-detail col-xs-12
+                col-sm-12
+                col-md-12
+                col-lg-7">
+            <div class="card-body">
+                <h5 class="card-title">{% trans "Available datasets" %}</h5>
+                {% if bookinstance_list or book_list %}
+                <form action="{% url 'jacquard-result' %}"  method='POST'>
+                    {% csrf_token %}
+                    <div class="list-group statistics-lst" style="overflow-y:scroll; overflow-x:hidden">
+                        {% for book in book_list %}
+                        <label  class="list-group-item ">
+                            <input class="form-check-input me-1" name="dataset" type="radio" checked
+                                   value="{{ book.dataset }}">{{book.title}}
+                        </label>
+                        {% endfor %}
+                        {% for datasetinst in bookinstance_list %}
+                        <label class="list-group-item ">
+                            <input class="form-check-input me-1" id="dataset" name="dataset" type="radio" checked
+                                   value="{{ datasetinst.book.dataset }}">{{datasetinst.book.title}}
+                        </label>
+                        {% endfor %}
+                    </div>
+                    <button type="submit" value="Submit" class="btn btn-outline-primary mt-5">{% trans "Continue" %}</button>
+                </form>
+                {% else %}
+                <p class="text-success">{% trans "There are no available datasets" %}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+{% endblock content %}

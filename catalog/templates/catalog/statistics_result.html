@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+{% load cms_tags menu_tags sekizai_tags %} {% load i18n %}
+{% block content %}
+{% placeholder "content" %}
+<head>
+    <link rel="stylesheet" type="text/css" href="../../../media/analysis.css">
+</head>
+
+<div class="container_result_analysis">
+    <div class="row justify-content-center ">
+        <div class="col-xs-12
+                col-sm-12
+                col-md-12
+                col-lg-3">
+            <div class="card card-info">
+                <div class="card-body">
+                    <h6 class="card-title">{% trans "Statistics" %}</h6>
+                    <p class="card-text"></p>
+                    <br>
+                    <a  class="btn btn-primary mt-2" href="{% url 'statistics_view' %}">{% trans "Back" %}</a>
+                </div>
+            </div>
+        </div>
+        <div id="result_statistics" class="result_statistics col-xs-12
+                col-sm-12
+                col-md-12
+                col-lg-5">
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/.xlsx_icon.svg/1200px-.xlsx_icon.svg.png" style="height:250px; width:250px" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{% trans "Result" %}</h5>
+                    <p class="card-text">{% trans "Dataset processing is done." %}<br>
+                    {% trans "Download the result of processing XSLX tables." %}
+                    </p>
+                    <a type="submit" value="Submit" class="btn  btn-outline-primary  mt-2" href="../../../media/subset.xlsx" download>{% trans "Download modsrc" %}</a>
+                    <a type="submit" value="Submit" class="btn  btn-outline-primary  mt-2 download_data_txt" href="../../../media/subset_env.xlsx" download>{% trans "Download env" %}</a>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+
+

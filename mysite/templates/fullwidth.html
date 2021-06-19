@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+{% block content %}
+	{% placeholder "content" %}
+ {% static_placeholder "Footer" %}
+
+<footer class="mastfoot text-center" style="  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 80px;">
+  <hr/>
+  {% static_placeholder "Footer" %}
+
+    <p>Designed for <a href="http://www.ras.ru/">The Russian Academy of Sciences</a>  by <a href="https://cabinet.miem.hse.ru/#/project/1">MIEM</a></p>
+    <p>Supported by RFBR 18-04-01010</p>
+
+
+</footer>
+{% endblock content %}
+
+ {% static_placeholder "Footer" %}
+
+

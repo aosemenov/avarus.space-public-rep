@@ -1,0 +1,884 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-29 01:13+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\accounts\templates\accounts\login.html:97
+msgid "LOGIN"
+msgstr "Авторизация"
+
+#: .\accounts\templates\accounts\login.html:106
+#: .\accounts\templates\accounts\register.html:124
+msgid "Username.."
+msgstr "Логин.."
+
+#: .\accounts\templates\accounts\login.html:114
+msgid "Password..."
+msgstr "Введите пароль..."
+
+#: .\accounts\templates\accounts\login.html:119
+#: .\accounts\templates\accounts\register.html:118
+#: .\mysite\templates\base.html:71
+msgid "Sign In"
+msgstr "Войти"
+
+#: .\accounts\templates\accounts\login.html:128
+msgid "Don't have an account?"
+msgstr "Нет аккаунта?"
+
+#: .\accounts\templates\accounts\login.html:128
+msgid "Sign Up"
+msgstr "Регистрация"
+
+#: .\accounts\templates\accounts\login.html:131
+msgid "Return to the homepage?"
+msgstr "Вернуться на главную страницу?"
+
+#: .\accounts\templates\accounts\login.html:131
+#: .\catalog\templates\R\comp_result.html:20
+#: .\catalog\templates\R\cor_result.html:20
+#: .\catalog\templates\R\factor_result.html:20
+#: .\catalog\templates\R\groups_amount_result.html:20
+#: .\catalog\templates\R\jaccar_result.html:20
+#: .\catalog\templates\R\species_amount_result.html:20
+#: .\catalog\templates\catalog\statistics_result.html:21
+msgid "Back"
+msgstr "Назад"
+
+#: .\accounts\templates\accounts\login.html:140
+#: .\accounts\templates\accounts\register.html:143
+#: .\catalog\templates\catalog\about.html:142
+#: .\mysite\templates\object_list.html:58
+msgid "Designed for"
+msgstr "Разработано для"
+
+#: .\accounts\templates\accounts\login.html:140
+#: .\accounts\templates\accounts\register.html:143
+#: .\catalog\templates\catalog\about.html:142
+#: .\mysite\templates\object_list.html:58
+msgid "The Russian Academy of Sciences"
+msgstr "Российской академии наук"
+
+#: .\accounts\templates\accounts\login.html:140
+#: .\accounts\templates\accounts\register.html:143
+#: .\catalog\templates\catalog\about.html:142
+#: .\mysite\templates\object_list.html:58
+msgid "by"
+msgstr "от"
+
+#: .\accounts\templates\accounts\login.html:140
+#: .\accounts\templates\accounts\register.html:143
+#: .\mysite\templates\object_list.html:58
+msgid "MIEM HSE"
+msgstr "МИЭМ НИУ ВШЭ"
+
+#: .\accounts\templates\accounts\login.html:141
+#: .\accounts\templates\accounts\register.html:144
+#: .\catalog\templates\catalog\about.html:142
+#: .\mysite\templates\object_list.html:59
+msgid "Supported by"
+msgstr "При поддержке"
+
+#: .\accounts\templates\accounts\register.html:79
+msgid "REGISTER ACCOUNT"
+msgstr "Регистрация"
+
+#: .\accounts\templates\accounts\register.html:110
+msgid "Register Account"
+msgstr "Зарегистрироваться"
+
+#: .\accounts\templates\accounts\register.html:118
+msgid "Already have an account?"
+msgstr "Уже есть аккаунт?"
+
+#: .\accounts\templates\accounts\register.html:125
+msgid "Email.."
+msgstr "Почта.."
+
+#: .\accounts\templates\accounts\register.html:126
+msgid "Enter password..."
+msgstr "Введите пароль..."
+
+#: .\accounts\templates\accounts\register.html:127
+msgid "Re-enter Password..."
+msgstr "Повторите пароль..."
+
+#: .\accounts\views.py:23
+msgid "Password must be more than 5 symbols!"
+msgstr "Пароль должен содержать больше 5 символов"
+
+#: .\accounts\views.py:27
+msgid "The passwords are different!"
+msgstr "Пароли не совпадают!"
+
+#: .\catalog\templates\R\comp.html:20 .\catalog\templates\R\comp_column.html:19
+#: .\catalog\templates\R\comp_result.html:17
+msgid "PCA Analysis"
+msgstr "PCA Анализ"
+
+#: .\catalog\templates\R\comp.html:22 .\catalog\templates\R\cor.html:22
+#: .\catalog\templates\R\factor.html:22 .\catalog\templates\R\jaccar.html:22
+msgid "Select available dataset from the list"
+msgstr "Выберите доступный датасет из списка"
+
+#: .\catalog\templates\R\comp.html:24 .\catalog\templates\R\comp_column.html:23
+#: .\catalog\templates\R\cor.html:24 .\catalog\templates\R\cor_column.html:23
+#: .\catalog\templates\R\factor.html:24
+#: .\catalog\templates\R\factor_column.html:23
+#: .\catalog\templates\R\jaccar.html:24
+#: .\catalog\templates\catalog\statistics_column.html:24
+msgid "Datasets"
+msgstr "Датасеты"
+
+#: .\catalog\templates\R\comp.html:25 .\catalog\templates\R\comp_column.html:24
+#: .\catalog\templates\R\cor.html:25 .\catalog\templates\R\cor_column.html:24
+#: .\catalog\templates\R\factor.html:25
+#: .\catalog\templates\R\factor_column.html:24
+msgid "Columns"
+msgstr "Столбцы"
+
+#: .\catalog\templates\R\comp.html:35 .\catalog\templates\R\cor.html:35
+#: .\catalog\templates\R\factor.html:35 .\catalog\templates\R\jaccar.html:34
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:40
+#: .\catalog\templates\catalog\statistics.html:45
+#: .\catalog\templates\catalog\statistics.html:161
+msgid "Available datasets"
+msgstr "Доступные датасеты"
+
+#: .\catalog\templates\R\comp.html:53 .\catalog\templates\R\cor.html:53
+#: .\catalog\templates\R\factor.html:53 .\catalog\templates\R\jaccar.html:52
+#: .\catalog\templates\catalog\statistics.html:63
+#: .\catalog\templates\catalog\statistics.html:155
+#: .\catalog\templates\catalog\statistics.html:179
+msgid "Continue"
+msgstr "Далее"
+
+#: .\catalog\templates\R\comp.html:56 .\catalog\templates\R\cor.html:56
+#: .\catalog\templates\R\factor.html:56 .\catalog\templates\R\jaccar.html:55
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:56
+#: .\catalog\templates\catalog\statistics.html:65
+#: .\catalog\templates\catalog\statistics.html:181
+msgid "There are no available datasets"
+msgstr "Нет доступных датасетов"
+
+#: .\catalog\templates\R\comp_column.html:21
+#: .\catalog\templates\R\cor_column.html:21
+#: .\catalog\templates\R\factor_column.html:21
+msgid "Select columns from the list"
+msgstr "Выберите критерии из списка"
+
+#: .\catalog\templates\R\comp_column.html:34
+#: .\catalog\templates\R\cor_column.html:34
+#: .\catalog\templates\R\factor_column.html:34
+msgid "Available columns"
+msgstr "Доступные столбцы"
+
+#: .\catalog\templates\R\comp_column.html:36
+#: .\catalog\templates\R\cor_column.html:36
+#: .\catalog\templates\R\factor_column.html:36
+#: .\catalog\templates\catalog\statistics_column.html:37
+#: .\mysite\templates\object_list.html:19
+msgid "Search "
+msgstr "Поиск.."
+
+#: .\catalog\templates\R\comp_column.html:61
+#: .\catalog\templates\R\cor_column.html:58
+#: .\catalog\templates\R\factor_column.html:61
+#: .\catalog\templates\catalog\statistics_column.html:76
+msgid "Get Result"
+msgstr "Далее"
+
+#: .\catalog\templates\R\comp_result.html:30
+#: .\catalog\templates\R\cor_result.html:30
+#: .\catalog\templates\R\factor_result.html:30
+#: .\catalog\templates\R\groups_amount_result.html:30
+#: .\catalog\templates\R\jaccar_result.html:30
+#: .\catalog\templates\R\species_amount_result.html:30
+#: .\catalog\templates\catalog\statistics_result.html:32
+msgid "Result"
+msgstr "Результат"
+
+#: .\catalog\templates\R\comp_result.html:33
+#: .\catalog\templates\R\cor_result.html:32
+#: .\catalog\templates\R\factor_result.html:32
+#: .\catalog\templates\R\jaccar_result.html:32
+#: .\catalog\templates\R\species_amount_result.html:32
+msgid "Download .txt"
+msgstr "Скачать .txt"
+
+#: .\catalog\templates\R\cor.html:20 .\catalog\templates\R\cor_column.html:19
+#: .\catalog\templates\R\cor_result.html:17
+msgid "Correlation Analysis"
+msgstr "Корреляционный анализ"
+
+#: .\catalog\templates\R\factor.html:20
+#: .\catalog\templates\R\factor_column.html:19
+#: .\catalog\templates\R\factor_result.html:17
+msgid "Factor Analysis"
+msgstr "Факторный анализ"
+
+#: .\catalog\templates\R\groups_amount_result.html:17
+msgid "Groups"
+msgstr "Группы"
+
+#: .\catalog\templates\R\jaccar.html:20
+#: .\catalog\templates\R\jaccar_result.html:17
+#: .\catalog\templates\catalog\statistics.html:113
+msgid "The Jacquard method"
+msgstr "Метод Жаккара"
+
+#: .\catalog\templates\R\species_amount_result.html:17
+
+msgid "Species richness"
+msgstr "Видовое богатство"
+
+#: .\catalog\templates\catalog\about.html:27
+msgid "The Arctic Vegetation Archive (AVA)"
+msgstr "Архив данных о растительности Арктики (AVA) -"
+
+#: .\catalog\templates\catalog\about.html:27
+msgid ""
+"is an international effort to assemble circumpolar Arctic vegetation plot "
+"data into a publically accessible web-based archive."
+msgstr ""
+"международный проект по сбору информации о растительности Арктического "
+"региона в доступную базу данных."
+
+#: .\catalog\templates\catalog\about.html:27
+msgid ""
+"The goal of AVA is to unite and standardize vegetation data from the Arctic "
+"that will give researchers a unique opportunity to analyze vegetation at pan-"
+"arctic scale. The initiative is endorsed by"
+msgstr ""
+"Цель AVA – объединить и стандартизировать разрозненные данные, собранные в "
+"разные годы специалистами-геоботаниками. Инициатива одобрена"
+
+#: .\catalog\templates\catalog\about.html:27
+msgid "the Conservation of Arctic Flora and Fauna of the Arctic Council"
+msgstr "Рабочей группой по сохранению арктической флоры и фауны"
+
+#: .\catalog\templates\catalog\about.html:27
+msgid "and"
+msgstr "и"
+
+#: .\catalog\templates\catalog\about.html:27
+msgid "the International Arctic Science Committee"
+msgstr "и Международным арктическим научным комитетом"
+
+#: .\catalog\templates\catalog\about.html:30
+msgid "read more"
+msgstr "читать еще"
+
+#: .\catalog\templates\catalog\about.html:35
+msgid ""
+"At present, AVA consists of about 30’000 data plots, mostly from Alaska, "
+"Canada and Scandinavia, stored in Arctic regional databases. The Russian AVA "
+"section is under rapid development. In cooperation with data authors we are "
+"working on archiving and harmonizing information on the vegetation "
+"composition of the Russian Arctic. Our website presents the Russian AVA data "
+"and provides an overview of available data for downloading. Access to the "
+"AVA data is diverse: previously published data could be"
+msgstr ""
+"В настоящее время Архив растительности Арктики насчитывает около 30’000 "
+"геоботанических описаний. Основную часть данных составляют описания "
+"растительности Аляски, Канады и Скандинавии, хранящиеся в региональных базах "
+"данных. Совместно с авторами описаний мы работаем над наполнением и "
+"стандартизацией данных для Архива, материалы которого представлены на этом "
+"вебсайте. Архив и отдельные его части доступны для скачивания через веб-"
+"интерфейс. Ранее опубликованные данные могут быть "
+
+#: .\catalog\templates\catalog\about.html:35
+msgid ""
+"downloaded directly and unpublished data – after a confirmation given by the "
+"dataset author (user agreement signing is needed)"
+msgstr ""
+"скачаны напрямую с сайта, неопубликованные – после принятия "
+"пользовательского соглашения и получения разрешения данного автором."
+
+#: .\catalog\templates\catalog\about.html:36
+msgid ""
+"A.N. Severtsov Institute of Ecology and Evolution RAS leads the effort. HSE "
+"Tikhonov Moscow Institute of Electronics and Mathematics provides technical "
+"assistance for the website. Project is supported by RFBR 18-04-01010 А."
+msgstr ""
+"Проект курирует Институт проблем экологии и эволюции имени А.Н. Северцова. "
+"Техническую поддержку оказывает Департамент компьютерной инженерии МИЭМ НИУ "
+"ВШЭ. Реализация поддержана грантом РФФИ N 18-04-01010 А."
+
+#: .\catalog\templates\catalog\about.html:56
+msgid "Our Team"
+msgstr "Наша команда"
+
+#: .\catalog\templates\catalog\about.html:61
+msgid "Ksenia Ermokhina"
+msgstr "Ксения Ермохина"
+
+#: .\catalog\templates\catalog\about.html:62
+msgid "A.N. Severtsov Institute of Ecology and Evolution RAS, Moscow"
+msgstr "Институт проблем экологии и эволюции им. А.Н. Северцова РАН, Москва"
+
+#: .\catalog\templates\catalog\about.html:68
+msgid "Maria Kurysheva"
+msgstr "Мария Курышева"
+
+#: .\catalog\templates\catalog\about.html:69
+#: .\catalog\templates\catalog\about.html:83
+msgid "HSE Tikhonov Moscow Institute of Electronics and Mathematics, Moscow"
+msgstr ""
+"НИУ ВШЭ, Московский государственный институт электроники и математики, Москва"
+
+#: .\catalog\templates\catalog\about.html:75
+msgid "Vitalii Zemlianskii"
+msgstr "Виталий Землянский"
+
+#: .\catalog\templates\catalog\about.html:76
+msgid ""
+"University of Zurich, Department of Evolutionary Biology and Environmental "
+"Studies, Zurich"
+msgstr ""
+"Цюрихский университет, Кафедра эволюционной биологии и экологических "
+"исследований, Цюрих"
+
+#: .\catalog\templates\catalog\about.html:82
+msgid "Denis Korolev"
+msgstr "Денис Королев"
+
+#: .\catalog\templates\catalog\about.html:96
+msgid "Contact Us"
+msgstr "Напишите нам"
+
+#: .\catalog\templates\catalog\about.html:97
+msgid ""
+"Great vision without great people is irrelevant.<br>Let's work together."
+msgstr ""
+"Великое видение без великих людей не имеет значения. <br>Давайте работать "
+"вместе."
+
+#: .\catalog\templates\catalog\about.html:110
+#: .\catalog\templates\catalog\index.html:92
+msgid "Name"
+msgstr "Имя"
+
+#: .\catalog\templates\catalog\about.html:114
+#: .\catalog\templates\catalog\datasets_requests.html:45
+#: .\catalog\templates\catalog\index.html:82
+msgid "Email"
+msgstr "Почта"
+
+#: .\catalog\templates\catalog\about.html:118
+msgid "Message"
+msgstr "Сообщения"
+
+#: .\catalog\templates\catalog\about.html:123
+#: .\catalog\templates\catalog\about.html:127
+msgid "Submit"
+msgstr "Отправить"
+
+#: .\catalog\templates\catalog\about.html:142
+msgid "MIEM"
+msgstr "МИЭМ НИУ ВШЭ"
+
+#: .\catalog\templates\catalog\book_detail.html:13
+#: .\catalog\templates\catalog\book_list.html:13
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:18
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:21
+#: .\catalog\templates\catalog\datasets_requests.html:20
+#: .\catalog\templates\catalog\index.html:19
+msgid "HOME"
+msgstr "ГЛАВНАЯ"
+
+#: .\catalog\templates\catalog\book_detail.html:14
+#: .\catalog\templates\catalog\book_list.html:14
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:19
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:22
+#: .\catalog\templates\catalog\datasets_requests.html:21
+#: .\catalog\templates\catalog\index.html:20
+msgid "Profile"
+msgstr "Профиль"
+
+#: .\catalog\templates\catalog\book_detail.html:15
+#: .\catalog\templates\catalog\book_list.html:15
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:20
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:23
+#: .\catalog\templates\catalog\datasets_requests.html:22
+#: .\catalog\templates\catalog\index.html:21
+msgid "RECEIVED DATASETS"
+msgstr "ДАТАСЕТЫ"
+
+#: .\catalog\templates\catalog\book_detail.html:16
+#: .\catalog\templates\catalog\book_list.html:16
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:21
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:24
+#: .\catalog\templates\catalog\datasets_requests.html:23
+#: .\catalog\templates\catalog\index.html:22
+#: .\mysite\templates\instructions.html:56
+msgid "My datasets"
+msgstr "Мои датасеты"
+
+#: .\catalog\templates\catalog\book_detail.html:17
+#: .\catalog\templates\catalog\book_list.html:17
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:22
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:25
+#: .\catalog\templates\catalog\datasets_requests.html:24
+#: .\catalog\templates\catalog\index.html:23
+#: .\mysite\templates\instructions.html:59
+msgid "My requests"
+msgstr "Мои запросы"
+
+#: .\catalog\templates\catalog\book_detail.html:18
+#: .\catalog\templates\catalog\book_list.html:18
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:23
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:26
+#: .\catalog\templates\catalog\datasets_requests.html:25
+#: .\catalog\templates\catalog\index.html:24
+msgid "LOGOUT"
+msgstr "АККАУНТ"
+
+#: .\catalog\templates\catalog\book_detail.html:19
+#: .\catalog\templates\catalog\book_list.html:19
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:24
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:27
+#: .\catalog\templates\catalog\datasets_requests.html:26
+#: .\catalog\templates\catalog\index.html:25
+msgid "Exit"
+msgstr "Выйти"
+
+#: .\catalog\templates\catalog\book_detail.html:22
+#: .\catalog\templates\catalog\book_list.html:22
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:27
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:30
+#: .\catalog\templates\catalog\datasets_requests.html:29
+#: .\catalog\templates\catalog\index.html:28
+msgid "STAFF"
+msgstr "СОТРУДНИКАМ"
+
+#: .\catalog\templates\catalog\book_detail.html:23
+#: .\catalog\templates\catalog\book_list.html:23
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:28
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:31
+#: .\catalog\templates\catalog\datasets_requests.html:30
+#: .\catalog\templates\catalog\index.html:29
+msgid "All datasets"
+msgstr "Все датасеты"
+
+#: .\catalog\templates\catalog\book_detail.html:24
+#: .\catalog\templates\catalog\book_list.html:24
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:29
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_user.html:32
+#: .\catalog\templates\catalog\datasets_requests.html:31
+#: .\catalog\templates\catalog\index.html:30
+msgid "All borrowed"
+msgstr "Выдачи"
+
+#: .\catalog\templates\catalog\book_detail.html:31
+msgid "Author"
+msgstr "Автор"
+
+#: .\catalog\templates\catalog\book_detail.html:32
+msgid "Description"
+msgstr "Описание"
+
+#: .\catalog\templates\catalog\book_detail.html:33
+msgid "Download archive"
+msgstr "Скачать архив"
+
+#: .\catalog\templates\catalog\book_list.html:32
+msgid "Datasets List"
+msgstr "Список датасетов"
+
+#: .\catalog\templates\catalog\book_list.html:41
+msgid "There are no datasets in the data"
+msgstr "В базе данных нет датасетов"
+
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:41
+msgid "Dataset name"
+msgstr "Имя датасета"
+
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:42
+msgid "User (login)"
+msgstr "Имя пользователя (Логин)"
+
+#: .\catalog\templates\catalog\bookinstance_list_borrowed_all.html:57
+msgid "There are no datasets borrowed"
+msgstr "Нет выданых датасетов"
+
+#: .\catalog\templates\catalog\datasets_requests.html:44
+msgid "Location"
+msgstr "Локация"
+
+#: .\catalog\templates\catalog\datasets_requests.html:46
+msgid "Status"
+msgstr "Статус"
+
+#: .\catalog\templates\catalog\datasets_requests.html:62
+msgid "There are no requests"
+msgstr "Нет активных запросов"
+
+#: .\catalog\templates\catalog\index.html:41
+msgid "Welcome"
+msgstr "Добро пожаловать"
+
+#: .\catalog\templates\catalog\index.html:50
+msgid "About "
+msgstr "Данные"
+
+#: .\catalog\templates\catalog\index.html:53
+msgid "Edit"
+msgstr "Редактировать"
+
+#: .\catalog\templates\catalog\index.html:71
+msgid "Login"
+msgstr "Логин"
+
+#: .\catalog\templates\catalog\index.html:102
+msgid "Organization"
+msgstr "Организация"
+
+#: .\catalog\templates\catalog\index.html:112
+msgid "Position"
+msgstr "Должность"
+
+#: .\catalog\templates\catalog\index.html:121
+msgid "You can edit your account using the following form"
+msgstr "Здесь вы можете изменить ваши данные"
+
+#: .\catalog\templates\catalog\index.html:146
+msgid "Save changes"
+msgstr "Сохранить"
+
+#: .\catalog\templates\catalog\statistics.html:23
+#: .\catalog\templates\catalog\statistics_column.html:20
+#: .\catalog\templates\catalog\statistics_result.html:18
+#: .\mysite\templates\base.html:52
+msgid "Statistics"
+msgstr "Статистика"
+
+#: .\catalog\templates\catalog\statistics.html:24
+msgid "Analytics"
+msgstr "Аналитика"
+
+#: .\catalog\templates\catalog\statistics.html:25
+msgid "Species analysis"
+msgstr "Видовой анализ"
+
+#: .\catalog\templates\catalog\statistics.html:29
+msgid "AVA Data Dictionary"
+msgstr "Cловарь данных AVA"
+
+#: .\catalog\templates\catalog\statistics.html:31
+msgid "The dictionary contains a transcript of the names in the datasets"
+msgstr "Словарь содержит пояснения к наименованиям в датасетах."
+
+#: .\catalog\templates\catalog\statistics.html:33
+msgid "Download"
+msgstr "Скачать"
+
+#: .\catalog\templates\catalog\statistics.html:76
+msgid "Correlation analysis"
+msgstr "Корреляционный анализ"
+
+#: .\catalog\templates\catalog\statistics.html:77
+msgid ""
+"Correlation analysis is a statistical method used to evaluate the strength "
+"of relationship between two quantitative variables."
+msgstr ""
+"Метод обработки статистических данных, заключающийся в изучении "
+"коэффициентов корреляции между переменными."
+
+#: .\catalog\templates\catalog\statistics.html:78
+#: .\catalog\templates\catalog\statistics.html:89
+#: .\catalog\templates\catalog\statistics.html:100
+#: .\catalog\templates\catalog\statistics.html:111
+msgid "Type of analysis"
+msgstr "Тип анализа"
+
+#: .\catalog\templates\catalog\statistics.html:78
+msgid "Correlation"
+msgstr "Корреляционный"
+
+#: .\catalog\templates\catalog\statistics.html:80
+#: .\catalog\templates\catalog\statistics.html:91
+#: .\catalog\templates\catalog\statistics.html:102
+msgid "Get Analysis"
+msgstr "Провести анализ"
+
+#: .\catalog\templates\catalog\statistics.html:87
+msgid "Principal component analysis"
+msgstr "Метод главных компонентов"
+
+#: .\catalog\templates\catalog\statistics.html:88
+msgid ""
+"Principal component analysis is the process of computing the principal "
+"components and using them to perform a change of basis on the data, "
+"sometimes using only the first few principal components and ignoring the "
+"rest."
+msgstr ""
+"Один из основных способов уменьшить размерность данных, потеряв наименьшее "
+"количество информации."
+
+#: .\catalog\templates\catalog\statistics.html:98
+msgid "Factor analysis"
+msgstr "Факторный анализ"
+
+#: .\catalog\templates\catalog\statistics.html:99
+msgid ""
+"A multidimensional method used to study the relationships between the values "
+"of variables"
+msgstr ""
+"Метод обработки статистических данных, заключающийся в изучении "
+"коэффициентов корреляции между переменными."
+
+#: .\catalog\templates\catalog\statistics.html:100
+msgid "Factor"
+msgstr "Факторный"
+
+#: .\catalog\templates\catalog\statistics.html:109
+msgid "Cluster analysis"
+msgstr "Кластерный анализ"
+
+#: .\catalog\templates\catalog\statistics.html:110
+msgid ""
+"A multidimensional statistical procedure that collects data that contains "
+"information about a selection of objects, and then organizes the objects "
+"into relatively homogeneous groups"
+msgstr ""
+"Многомерная статистическая процедура, выполняющая сбор данных, содержащих "
+"информацию о выборке объектов, и затем упорядочивающая объекты в "
+"сравнительно однородные группы."
+
+#: .\catalog\templates\catalog\statistics.html:111
+msgid "Cluster"
+msgstr "Кластерный"
+
+#: .\catalog\templates\catalog\statistics.html:122
+msgid "Available groups"
+msgstr "Доступные группы"
+
+#: .\catalog\templates\catalog\statistics_column.html:22
+msgid "Select options from the list"
+msgstr "Выберите параметры из списка"
+
+#: .\catalog\templates\catalog\statistics_column.html:25
+msgid "Options"
+msgstr "Параметры"
+
+#: .\catalog\templates\catalog\statistics_column.html:35
+msgid "Available parameters"
+msgstr "Доступные параметры"
+
+#: .\catalog\templates\catalog\statistics_column.html:52
+msgid "Genus"
+msgstr "Род"
+
+#: .\catalog\templates\catalog\statistics_column.html:64
+msgid "Moisture"
+msgstr "Влажность"
+
+#: .\catalog\templates\catalog\statistics_result.html:33
+msgid "Dataset processing is done."
+msgstr "Обработка датасета завершена."
+
+#: .\catalog\templates\catalog\statistics_result.html:34
+msgid "Download the result of processing XSLX tables."
+msgstr "Вы можете скачать результат анализа в виде XLSX таблиц."
+
+#: .\catalog\templates\catalog\statistics_result.html:36
+msgid "Download modsrc"
+msgstr "Скачать modsrc"
+
+#: .\catalog\templates\catalog\statistics_result.html:37
+msgid "Download env"
+msgstr "Скачать env"
+
+#: .\mysite\settings.py:172 .\mysite\settings.py:182
+msgid "EN"
+msgstr ""
+
+#: .\mysite\settings.py:173 .\mysite\settings.py:189
+msgid "RU"
+msgstr ""
+
+#: .\mysite\templates\base.html:42
+msgid "Main"
+msgstr "Главная"
+
+#: .\mysite\templates\base.html:45
+msgid "About Us"
+msgstr "О нас"
+
+#: .\mysite\templates\base.html:48
+msgid "Instructions"
+msgstr "Инструкции"
+
+#: .\mysite\templates\instructions.html:23
+msgid "Authorization and Registration"
+msgstr "Авторизация и Регистрация"
+
+#: .\mysite\templates\instructions.html:28
+msgid "Welcome to AVA!"
+msgstr "Добро пожаловать в AVA!"
+
+#: .\mysite\templates\instructions.html:34
+msgid "To get the full functionality of the site, you need to register"
+msgstr ""
+"Для получения полной функциональности сайта, вам необходимо пройти "
+"регистрацию"
+
+#: .\mysite\templates\instructions.html:37
+msgid "Follow the instructions"
+msgstr "Следуйте инструкции"
+
+#: .\mysite\templates\instructions.html:38
+msgid "Click the <b>Sign In</b> button in the upper right corner"
+msgstr "Нажмите <b>Войти</b> справа в меню"
+
+#: .\mysite\templates\instructions.html:38
+msgid "Click <b>Sign Up</b> if you don't have an account and register"
+msgstr "Нажмите <b>Регистрация</b> если у вас нет аккаунта"
+
+#: .\mysite\templates\instructions.html:38
+msgid "Log in to the system"
+msgstr "Выполните вход в систему"
+
+#: .\mysite\templates\instructions.html:39
+msgid ""
+"After that, the items <b>Statistics</b>, <b>Personal Cabinet</b> will appear "
+"in your menu"
+msgstr ""
+"После этого в меню появятся разделы <b>Статистика</b> и <b>Личный кабинет</b>"
+
+#: .\mysite\templates\instructions.html:46
+msgid "Queries and Datasets"
+msgstr "Запросы и Датасеты"
+
+#: .\mysite\templates\instructions.html:50
+msgid ""
+"Congratulations, registration is complete!<br>Now let's look at the main "
+"functionality in more detail"
+msgstr ""
+"Поздравляем, регистрация выполнена! <br> Давайте рассмотрим основной "
+"функционал более детально"
+
+#: .\mysite\templates\instructions.html:53
+msgid "Personal account"
+msgstr "Личный кабинет"
+
+#: .\mysite\templates\instructions.html:54
+msgid ""
+"You can go to your personal account by clicking on your icon in the upper-"
+"right corner. You will get access to your profile, where all your data is "
+"stored. You can add your personal data to simplify the work on the site"
+msgstr ""
+"Вы можете перейти в личный кабинет, нажав иконку сверху справа. Здесь "
+"хранятся все ваши данные. Также вы можете добавить личную информацию, чтобы "
+"упростить работу на сайте"
+
+#: .\mysite\templates\instructions.html:57
+msgid ""
+"This section contains all the datasets available to you at the moment. You "
+"can download the dataset you are interested in by clicking on its name"
+msgstr ""
+"Этот раздел содержит информацию о доступных вам датасетах на данный момент. "
+"Вы можете скачать интересующий вас датасет, нажав на его название"
+
+#: .\mysite\templates\instructions.html:60
+msgid ""
+"This section contains information about the status of your requests for "
+"access to datasets. Don't worry if getting access will take some time. The "
+"moderator will definitely see your request and respond"
+msgstr ""
+"Данный раздел содержит информация о статусе ваших запросов. Не боспокойтесь, "
+"подтверждение запроса требует времени. Модератор обязательно рассмотрит вашу "
+"заявку"
+
+#: .\mysite\templates\instructions.html:62
+msgid "Sending a request"
+msgstr "Отправка запроса"
+
+#: .\mysite\templates\instructions.html:63
+msgid ""
+"On the main page of the site where the map is located, there is a list of "
+"locations. By clicking on it, you can open the place card and see more "
+"detailed information. It is in the description of the place that the "
+"<b>Request</b> button is located. You should click on it and fill out the "
+"application form"
+msgstr ""
+"<br>На главной странице сайта, где находится карта, есть список локаций. При "
+"нажатии на него, вы можете открыть карточку места и посмотреть детальную "
+"информацию о нем. Именно здесь расположена кнопка запроса. Вам следует "
+"нажать на нее и заполнить форму запроса<br>"
+
+#: .\mysite\templates\instructions.html:70
+msgid "Statistics and Analytics"
+msgstr "Статистика и Аналитика"
+
+#: .\mysite\templates\instructions.html:75
+msgid ""
+"The <b>Statistics</b> section allows you to analyze the datasets available "
+"to you. The page contains a description of the types of analyses and lists "
+"of available datasets. For your convenience, you are invited to download the "
+"<b>AVA Data Dictionary</b>"
+msgstr ""
+"Раздел <b>Статистика</b> предоставляет возможность анализировать датасеты. "
+"Страница содержит описание типов анализа и список доступных датасетов. Для "
+"вашего удобства, вы можете скачать <b>Словарь данных AVA</b>"
+
+#: .\mysite\templates\instructions.html:78
+msgid "The analysis is carried out in two stages"
+msgstr "Анализ проводится в 2 этапа"
+
+#: .\mysite\templates\instructions.html:79
+msgid "Select a dataset"
+msgstr "Выберите датасет"
+
+#: .\mysite\templates\instructions.html:79
+msgid "Selecting parameters or criteria for analysis"
+msgstr "Выберите параметры или критереии для анализа"
+
+#: .\mysite\templates\instructions.html:80
+msgid "You can download all the results of the analysis. Good luck"
+msgstr "Вы сможете загрузить результаты анализа. Удачи"
+
+#: .\mysite\templates\instructions.html:82
+msgid ""
+"If you still have questions, you can always fill out the feedback form in "
+"the About Us section"
+msgstr ""
+"Если у вас остались вопросы, вы всегда можете заполнить форму обратной связи "
+"на странице <b>О нас</b>"
+
+#: .\mysite\templates\object_list.html:41
+msgid "Search"
+msgstr "Поиск.."
+
+#~ msgid "Species"
+#~ msgstr "Виды"
+
+#~ msgid "The minimum password length is 5 symbols!"
+#~ msgstr "Минимальная длина пароля 5 символов!"
+
+#~ msgid "link"
+#~ msgstr "ссылка"
+
+#~ msgid "Select dataset"
+#~ msgstr "Выберите датасет"
+
+#~ msgid "Select analysis type"
+#~ msgstr "Выберите тип анализа"

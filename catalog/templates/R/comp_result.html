@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+{% load cms_tags menu_tags sekizai_tags %} {% load i18n %}
+{% block content %}
+{% placeholder "content" %}
+<head>
+    <link rel="stylesheet" type="text/css" href="../../../media/analysis.css">
+</head>
+<div class="container_result_analysis">
+    <div class="row justify-content-center ">
+        <div class="col-xs-12
+                col-sm-12
+                col-md-12
+                col-lg-4">
+            <div   class="card card-info">
+                <div class="card-body">
+                    <h5 class="card-title">{% trans "PCA Analysis" %}</h5>
+                    <p class="card-text"></p>
+                    <br>
+                    <a  class="btn btn-primary mt-2" href="{% url 'statistics_view' %}">{% trans "Back" %}</a>
+                </div>
+            </div>
+        </div>
+        <div id="result_statistics" class="result_statistics col-xs-12
+                col-sm-12
+                col-md-12
+                col-lg-7">
+            <div class="card card-detail">
+                <div class="card-body">
+                    <h5 class="card-title">{% trans "Result" %}</h5>
+                    <embed src="../../../media/Rplots.pdf" width="100%" height="660px" />
+                    <p class="card-text">{{ result|linebreaks }}</p>
+                    <a type="submit" value="Submit" class="btn  btn-outline-primary  mt-2" href="../../../media/testRcomp.txt" download>{% trans "Download .txt" %}</a>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+
+

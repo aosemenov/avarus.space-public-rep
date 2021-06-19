@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+{% load cms_tags menu_tags sekizai_tags %} {% load i18n %}
+{% block content %}
+{% placeholder "content" %}
+<head>
+    <link rel="stylesheet" type="text/css" href="../../media/statistics.css">
+    <link rel="stylesheet" type="text/css" href="../../../media/analysis.css">
+</head>
+
+<div class="container_statistics">
+    <div class="row justify-content-center">
+        <div style="display:block" id="result" class="col-xs-12
+                col-sm-12
+                col-md-12
+                col-lg-4">
+            <div  class="card card-info">
+                <div class="card-body">
+                    <h5 class="card-title">{% trans "Factor Analysis" %}</h5>
+                    <p class="card-text">
+                        {% trans "Select columns from the list" %}</p>
+                    <div  style="display:block" class="list-group" id="myTab" role="tablist">
+                        <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center disabled" data-bs-toggle="list"  role="tab">{% trans "Datasets" %}</a>
+                        <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center active" data-bs-toggle="list"  role="tab">{% trans "Columns" %}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card card-detail col-xs-12
+                col-sm-12
+                col-md-12
+                col-lg-7">
+            <div class="card-body">
+                <h5 class="card-title">{% trans "Available columns" %}</h5>
+                <br>
+                {% trans "Search " as the_search %}
+                <form class="search-form">
+                    <input style=" margin-right:15px;box-shadow:none; border: solid 1px lightgrey; border-radius: 4px" class="search-form__input search-form__input_position_footer" id="elastic_statistics" type="text" placeholder="{{ the_search }}">
+                    <div class="search-form__icon search-form__icon-position_footer">
+                        <svg class="search-form__icon-image" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 20L15.0962 15.0962M15.0962 15.0962C16.2725 13.9199 17 12.2949 17 10.5C17 6.91015 14.0899 4 10.5 4C6.91015 4 4 6.91015 4 10.5C4 14.0899 6.91015 17 10.5 17C12.2949 17 13.9199 16.2725 15.0962 15.0962Z" stroke="#768298" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </form>
+                <br>
+                <form action="{% url 'factor-result' %}"  method='POST'>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input hidden value='{{ chosen_dataset }}' name="dataset" type="checkbox" checked>
+                        <div class="list-group  statistics-list" style="overflow-y:scroll; overflow-x:hidden">
+                            <label class="list-group-item__statistics-column list-group-item bg-transparent">
+                                <input class=" form-check-input me-1" id="select-all" type="checkbox">select all
+                            </label>
+                            {% for column in result_column %}
+                            <label class="list-group-item__statistics-column list-group-item bg-light">
+                                <input class="form-check-input me-1" name="columns" type="checkbox" value="{{ column }}">{{ column }}
+                            </label>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <button type="submit" value="Submit" class="btn btn-outline-danger mt-2">{% trans "Get Result" %}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+

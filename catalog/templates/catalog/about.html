@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+{% block content %}{% load i18n %}
+{% placeholder "content" %}
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="keywords" content="About Us, Our Team, Contact Us">
+  <meta name="description" content="">
+  <meta name="page_type" content="np-template-header-footer-from-plugin">
+  <title>About Us</title>
+  <link rel="stylesheet" href="../../../media/nicepage.css" media="screen">
+  <link rel="stylesheet" href="../../../media/Главная.css" media="screen">
+  <meta name="generator" content="Nicepage 3.11.0, nicepage.com">
+  <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+</head>
+<body class="u-body">
+<section class="u-align-left u-clearfix u-white u-section-1" id="carousel_de3c">
+  <div class="u-clearfix u-sheet u-sheet-1">
+    <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+      <div class="u-layout">
+        <div class="u-layout-row">
+          <div class="u-align-justify u-container-style u-layout-cell u-size-30 u-layout-cell-1">
+            <div class="u-container-layout u-container-layout-1">
+              <p class="u-text u-text-1"><b>{% trans "The Arctic Vegetation Archive (AVA)" %}</b> {% trans "is an international effort to assemble circumpolar Arctic vegetation plot data into a publically accessible web-based archive." %} &nbsp;&nbsp;<br>{% trans "The goal of AVA is to unite and standardize vegetation data from the Arctic that will give researchers a unique opportunity to analyze vegetation at pan-arctic scale. The initiative is endorsed by" %} <a href="https://www.caff.is/flora-cfg/arctic-vegetation-archive-ava" target="_blank">{% trans "the Conservation of Arctic Flora and Fauna of the Arctic Council" %}</a> {% trans "and" %} <a href="https://iasc.info/working-groups/terrestrial/activities" target="_blank">{% trans "the International Arctic Science Committee"%}</a>.
+              </p>
+
+              <a href="https://www.geobotany.uaf.edu/ava" class="u-active-none u-border-6 u-border-black u-btn u-btn-rectangle u-button-style u-hover-none u-none u-btn-1" target="_blank">{% trans "read more" %}</a>
+            </div>
+          </div>
+          <div class="u-align-justify u-container-style u-layout-cell u-size-30 u-layout-cell-2">
+            <div class="u-container-layout u-valign-top u-container-layout-2">
+              <p class="u-text u-text-2">{% trans "At present, AVA consists of about 30’000 data plots, mostly from Alaska, Canada and Scandinavia, stored in Arctic regional databases. The Russian AVA section is under rapid development. In cooperation with data authors we are working on archiving and harmonizing information on the vegetation composition of the Russian Arctic. Our website presents the Russian AVA data and provides an overview of available data for downloading. Access to the AVA data is diverse: previously published data could be" %}{% trans "downloaded directly and unpublished data – after a confirmation given by the dataset author (user agreement signing is needed)" %}&nbsp;&nbsp;<br>
+                <br>{% trans "A.N. Severtsov Institute of Ecology and Evolution RAS leads the effort. HSE Tikhonov Moscow Institute of Electronics and Mathematics provides technical assistance for the website. Project is supported by RFBR 18-04-01010 А." %}
+              </p>
+              <br>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="u-clearfix u-white u-section-2" id="sec-22f3">
+  <div class="u-clearfix u-sheet u-sheet-1">
+    <div class="u-container-style u-group u-image u-image-1" data-image-width="1600" data-image-height="1132">
+      <div class="u-container-layout u-container-layout-1"></div>
+    </div>
+  </div>
+</section>
+<section class="u-align-center u-clearfix u-grey-5 u-section-3" id="sec-7de9">
+  <div class="u-clearfix u-sheet u-sheet-1">
+    <h2 class="u-text u-text-1">{% trans "Our Team" %}</h2>
+    <div class="u-list u-repeater u-list-1">
+      <div class="u-align-center u-container-style u-list-item u-repeater-item">
+        <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
+          <img class="u-image u-image-1" src="../../../media/pictures/aec31c47-d6b9-4f13-95c4-e2bb8219663f.jpg" data-image-width="150" data-image-height="150">
+          <h5 class="u-text u-text-2">{% trans "Ksenia Ermokhina" %}</h5>
+          <p class="u-text u-text-3">{% trans "A.N. Severtsov Institute of Ecology and Evolution RAS, Moscow" %}</p>
+        </div>
+      </div>
+      <div class="u-align-center u-container-style u-list-item u-repeater-item">
+        <div class="u-container-layout u-similar-container u-valign-top u-container-layout-2">
+          <img class="u-image u-image-2" src="../../../media/pictures/b8e6a74a-51d6-42db-b3a2-d4cda68abc7a.jpg" data-image-width="150" data-image-height="150">
+          <h5 class="u-text u-text-4">{% trans "Maria Kurysheva" %}&nbsp;</h5>
+          <p class="u-text u-text-5">{% trans "HSE Tikhonov Moscow Institute of Electronics and Mathematics, Moscow" %}</p>
+        </div>
+      </div>
+      <div class="u-align-center u-container-style u-list-item u-repeater-item">
+        <div class="u-container-layout u-similar-container u-valign-top u-container-layout-3">
+          <img class="u-image u-image-3" src="../../../media/pictures/zemlianskii_vitalii.jpg.jpg" data-image-width="150" data-image-height="150">
+          <h5 class="u-text u-text-6">{% trans "Vitalii Zemlianskii" %}</h5>
+          <p class="u-text u-text-7">{% trans "University of Zurich, Department of Evolutionary Biology and Environmental Studies, Zurich" %}</p>
+        </div>
+      </div>
+      <div class="u-align-center u-container-style u-list-item u-repeater-item">
+        <div class="u-container-layout u-similar-container u-valign-top u-container-layout-4">
+          <img class="u-image u-image-4" src="../../../media/pictures/VhHjkaEJwRE.jpg" data-image-width="150" data-image-height="150">
+          <h5 class="u-text u-text-8">{% trans "Denis Korolev" %}&nbsp;</h5>
+          <p class="u-text u-text-9">{% trans "HSE Tikhonov Moscow Institute of Electronics and Mathematics, Moscow" %}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="u-clearfix u-white u-section-4" id="carousel_a66c">
+  <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+    <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+      <div class="u-layout">
+        <div class="u-layout-row">
+          <div class="u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1">
+            <div class="u-container-layout u-container-layout-1">
+              <h2 class="u-text u-text-1">{% trans "Contact Us" %}</h2>
+              <p class="u-text u-text-3">{% trans "Great vision without great people is irrelevant.<br>Let's work together."%}
+              </p>
+              <br>
+              <br>
+              </p>
+            </div>
+          </div>
+          <div class="u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2">
+            <div class="u-container-layout u-container-layout-2">
+              <div class="u-expanded-width-sm u-expanded-width-xs u-form u-form-1">
+                <form action="{% url 'about'  %}" method="POST" class="u-block-46e8-10 u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" source="custom">
+                  {% csrf_token %}
+                  <div class="u-form-group u-form-name">
+                    <label for="name-f9f1" class="u-form-control-hidden u-label">{% trans "Name" %}</label>
+                    <input type="text" placeholder="Enter your Name" id="name-f9f1" value="{{ user.get_full_name }}"  name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                  </div>
+                  <div class="u-form-email u-form-group">
+                    <label for="email-f9f1" class="u-form-control-hidden u-label">{% trans "Email" %}</label>
+                    <input type="email" placeholder="Enter a valid email address" value="{{ user.email }}" id="email-f9f1" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                  </div>
+                  <div class="u-form-group u-form-message">
+                    <label for="message-f9f1" class="u-form-control-hidden u-label">{% trans "Message" %}</label>
+                    <textarea placeholder="Enter your message" rows="4" cols="50" id="message-f9f1" name="message" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required=""></textarea>
+                  </div>
+                  {% if user.is_authenticated %}
+                  <div class="u-align-left u-form-group u-form-submit">
+                    <button type="submit" id="submit" class="btn btn-primary mt-2" >{% trans "Submit" %}</button>
+                  </div>
+                  {% else %}
+                  <div class="u-align-left u-form-group u-form-submit">
+                    <button type="submit" disabled id="submit2" class="btn btn-primary mt-2" >{% trans "Submit" %}</button>
+                  </div>
+                  {% endif %}
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-6758"><div class="u-clearfix u-sheet u-sheet-1">
+  <p class="u-small-text u-text u-text-variant u-text-1">{% trans "Designed for" %}&nbsp;<a href="http://www.ras.ru/" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">{% trans "The Russian Academy of Sciences" %}</a>&nbsp;{% trans "by" %} <a href="https://cabinet.miem.hse.ru/#/project/1" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2">{% trans "MIEM" %}</a><br>{% trans "Supported by" %} RFBR 18-04-01010
+  </p>
+</div></footer>
+</body>
+</html>
+
+{% endblock content %}

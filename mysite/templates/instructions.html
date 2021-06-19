@@ -1,0 +1,93 @@
+{% extends "base.html" %}{% load i18n %}
+{% load cms_tags %}
+{% block content %}
+	{% placeholder "content" %}
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Instruction</title>
+    <link rel="stylesheet" href="../../media/nicepage.css" media="screen">
+    <link rel="stylesheet" href="../../media/instruct.css" media="screen">
+    <script class="u-script" type="text/javascript" src="../../media/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="../../media/nicepage.js" defer=""></script>
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+  </head>
+  <body data-home-page="Главная.html" data-home-page-title="Главная" class="u-body">
+    <section class="u-align-center u-clearfix u-grey-5 u-section-1" id="sec-a0db">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-accordion u-spacing-15 u-accordion-1">
+          <div class="u-accordion-item">
+            <a class="active u-accordion-link u-active-white u-button-style u-hover-white u-text-active-palette-2-base u-text-hover-palette-2-base u-white u-accordion-link-1" id="link-accordion-0781" aria-controls="accordion-0781" aria-selected="true">
+              <span class="u-accordion-link-text">{% trans "Authorization and Registration" %}</span><span class="u-accordion-link-icon u-icon u-text-grey-40 u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 42 42" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-d827"></use></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 42 42" x="0px" y="0px" id="svg-d827" style="enable-background:new 0 0 42 42;"><polygon points="42,20 22,20 22,0 20,0 20,20 0,20 0,22 20,22 20,42 22,42 22,22 42,22 "></polygon></svg></span>
+            </a>
+            <div class="u-accordion-active u-accordion-pane u-container-style u-expanded-width u-white u-accordion-pane-1" id="accordion-0781" aria-labelledby="link-accordion-0781">
+              <div class="u-container-layout u-container-layout-1">
+                <h5 class="u-text u-text-2">
+                  <span style="font-weight: 700;">{% trans "Welcome to AVA!" %}</span>
+                  <br>
+                  <br>
+                  <br>
+                </h5>
+                <p class="u-align-left u-text u-text-3">
+                  <span style="font-weight: 700;">{% trans "To get the full functionality of the site, you need to register" %}.</span>
+                  <br>
+                  <br>
+                  <span style="font-weight: 700;">{% trans "Follow the instructions" %}:</span>
+                  <br>1.&nbsp;{% trans "Click the <b>Sign In</b> button in the upper right corner" %}<br>2. {% trans "Click <b>Sign Up</b> if you don't have an account and register" %}<br>3.&nbsp;{% trans "Log in to the system" %}<br>
+                  <br>{% trans "After that, the items <b>Statistics</b>, <b>Personal Cabinet</b> will appear in your menu" %}.<br><br>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="u-accordion-item">
+            <a class="u-accordion-link u-active-white u-button-style u-hover-white u-text-active-palette-2-base u-text-hover-palette-2-base u-white u-accordion-link-2" id="link-accordion-4c47" aria-controls="accordion-4c47" aria-selected="false">
+              <span class="u-accordion-link-text">{% trans "Queries and Datasets" %}</span><span class="u-accordion-link-icon u-icon u-text-grey-40 u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 42 42" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-e2d7"></use></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 42 42" x="0px" y="0px" id="svg-e2d7" style="enable-background:new 0 0 42 42;"><polygon points="42,20 22,20 22,0 20,0 20,20 0,20 0,22 20,22 20,42 22,42 22,22 42,22 "></polygon></svg></span>
+            </a>
+            <div class="u-accordion-pane u-container-style u-expanded-width u-white u-accordion-pane-2" id="accordion-4c47" aria-labelledby="link-accordion-4c47">
+              <div class="u-container-layout u-valign-top u-container-layout-2">
+                <p class="u-text u-text-4">{% trans "Congratulations, registration is complete!<br>Now let's look at the main functionality in more detail" %}
+                </p>
+                <p class="u-text u-text-5">
+                  <span style="font-weight: 700;">{% trans "Personal account" %}</span>
+                  <br>{% trans "You can go to your personal account by clicking on your icon in the upper-right corner. You will get access to your profile, where all your data is stored. You can add your personal data to simplify the work on the site" %}.<br>
+                  <br>
+                  <span style="font-weight: 700;">{% trans "My datasets" %}</span>
+                  <br>{% trans "This section contains all the datasets available to you at the moment. You can download the dataset you are interested in by clicking on its name"%}.<br>
+                  <br>
+                  <span style="font-weight: 700;">{% trans "My requests" %}</span>
+                  <br>{% trans "This section contains information about the status of your requests for access to datasets. Don't worry if getting access will take some time. The moderator will definitely see your request and respond"%}.<br>
+                  <br>
+                  <span style="font-weight: 700;">{% trans "Sending a request" %}</span>
+                  <br>{% trans "On the main page of the site where the map is located, there is a list of locations. By clicking on it, you can open the place card and see more detailed information. It is in the description of the place that the <b>Request</b> button is located. You should click on it and fill out the application form"%}<br>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="u-accordion-item">
+            <a class="u-accordion-link u-active-white u-button-style u-hover-white u-text-active-palette-2-base u-text-hover-palette-2-base u-white u-accordion-link-3" id="link-accordion-a910" aria-controls="accordion-a910" aria-selected="false">
+              <span class="u-accordion-link-text">{% trans "Statistics and Analytics" %}</span><span class="u-accordion-link-icon u-icon u-text-grey-40 u-icon-3"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 42 42" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-ba02"></use></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 42 42" x="0px" y="0px" id="svg-ba02" style="enable-background:new 0 0 42 42;"><polygon points="42,20 22,20 22,0 20,0 20,20 0,20 0,22 20,22 20,42 22,42 22,22 42,22 "></polygon></svg></span>
+            </a>
+            <div class="u-accordion-pane u-container-style u-expanded-width u-white u-accordion-pane-3" id="accordion-a910" aria-labelledby="link-accordion-a910">
+              <div class="u-container-layout u-valign-top u-container-layout-3">
+                <p class="u-text u-text-6">
+                  <span style="font-weight: 700;">{% trans "The <b>Statistics</b> section allows you to analyze the datasets available to you. The page contains a description of the types of analyses and lists of available datasets. For your convenience, you are invited to download the <b>AVA Data Dictionary</b>" %}.</span>
+                  <br>
+                  <br>
+                  <span style="font-weight: 700;">{% trans "The analysis is carried out in two stages" %}:</span>
+                  <br>1. {% trans "Select a dataset" %}<br>2. {% trans "Selecting parameters or criteria for analysis" %}<br>
+                  <br>{% trans "You can download all the results of the analysis. Good luck" %}!<br>
+                  <br>
+                  <span style="font-weight: 700;">{% trans "If you still have questions, you can always fill out the feedback form in the About Us section" %}.</span>
+                  <br>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
+{% endblock content %}

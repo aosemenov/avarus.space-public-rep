@@ -1,0 +1,115 @@
+<canvas id="myChartP"></canvas>
+<script>
+var ctx = document.getElementById('myChartP');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Mean canopy height', 'Mean tree layer height', 'Mean shrub layer height', 'Mean herb layer height', 'Mean moss layer height'],
+        datasets: [{
+            label: 'Phytocenosis data completeness',
+            data: [100,
+0,
+100,
+100,
+100],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+0
+0
+0
+0
+0
+
+
+
+
+
+
+<canvas id="myChartPc"></canvas>
+<script>
+var ctx = document.getElementById('myChartPc');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Tree layer', 'Shrub layer', 'Tall shrubs', 'Low shrubs', 'Erect dwarf-shrubs','Prostrate dwarf-shrubs','Graminoids','Tussock graminoids','Forbs','Seedless vascular plants','Mosses & liverworts','Lichen layer','Crust','Algae layer','Bare soil','Bare rock','Open water','Litter layer','Total'],
+        datasets: [{
+            label: 'Phytocoenosis data completeness (cover)',
+            data: [81,
+100,
+100,
+100,
+100,
+100,
+100,
+100,
+100,
+100,
+100,
+100,
+100,
+100,
+100,
+100,
+100,
+100,
+100],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(155, 169, 155, 0.2)',
+                'rgba(125, 189, 23, 0.2)',
+                'rgba(225, 145, 65, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(155, 169, 155, 1)',
+                'rgba(125, 189, 23, 1)',
+                'rgba(225, 145, 65, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>

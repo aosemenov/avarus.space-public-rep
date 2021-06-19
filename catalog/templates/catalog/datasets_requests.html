@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load cms_tags menu_tags sekizai_tags %} {% load i18n %}
+
+
+{% block content %}
+<style>
+    table tbody {counter-reset: rowNumber;}
+    table tbody tr {counter-increment: rowNumber;}
+    table tbody tr th:first-child::after {content: counter(rowNumber);}
+</style>
+<div class="container emp-profile">
+    <div class="row row-head">
+        <div class="
+                col-5
+                col-sm-3
+                col-md-3
+                col-lg-3">
+            <div class="profile-work">
+                {% if   user.is_authenticated %}
+                <p>{% trans "HOME" %}</p>
+                <a href="{% url 'index' %}">{% trans "Profile" %}</a>
+                <p>{% trans "RECEIVED DATASETS" %}</p>
+                <a href="{% url 'my-borrowed' %}">{% trans "My datasets" %}</a><br/>
+                <a href="{% url 'my-requests' %}">{% trans "My requests" %}</a><br/>
+                <p>{% trans "LOGOUT" %}</p>
+                <a href="{% url 'logout'%}">{% trans "Exit" %}</a>
+                {% endif %}
+                {% if user.is_staff %}
+                <p>{% trans "STAFF" %}</p>
+                <a href="{% url 'books' %}">{% trans "All datasets" %}</a><br/>
+                <a href="{% url 'all-borrowed' %}">{% trans "All borrowed" %}</a><br/>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="col-12
+                col-sm-9
+                col-md-9
+                col-lg-9">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">№</th>
+                    <th scope="col">{% trans "Location" %}</th>
+                    <th scope="col">{% trans "Email" %}</th>
+                    <th scope="col">{% trans "Status" %}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% if feedback_list %}
+                {% for request in feedback_list %}
+                <tr>
+                    <th scope="row"></th>
+                    <td>{{ request.name_space }}</td>
+                    <td>{{ request.email }}</td>
+                    <td><span class="{% if request.status == 'o' %}text-success{% elif request.status == 'm' %}text-danger{% else %}text-warning{% endif %}">{{ request.get_status_display }}</span></td>
+                </tr>
+                {% endfor %}
+                {% else %}
+                <tr class="text-success">
+                    <th scope="row"></th>
+                    <td>{% trans "There are no requests" %}</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

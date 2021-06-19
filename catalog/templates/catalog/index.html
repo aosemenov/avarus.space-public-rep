@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+{% load cms_tags menu_tags sekizai_tags %} {% load i18n %}
+<head>
+    <title>{% page_attribute 'page_title' %} · AVA</title>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+{% block content %}
+<div class="container emp-profile">
+    <div class="row row-head">
+        <div class="
+                col-5
+                col-sm-3
+                col-md-3
+                col-lg-3">
+            <div class="profile-work">
+                {% if   user.is_authenticated %}
+                <p>{% trans "HOME" %}</p>
+                <a href="{% url 'index' %}">{% trans "Profile" %}</a><br/>
+                <p>{% trans "RECEIVED DATASETS" %}</p>
+                <a href="{% url 'my-borrowed' %}">{% trans "My datasets" %}</a><br/>
+                <a href="{% url 'my-requests' %}">{% trans "My requests" %}</a><br/>
+                <p>{% trans "LOGOUT" %}</p>
+                <a href="{% url 'logout'%}">{% trans "Exit" %}</a>
+                {% endif %}
+                {% if user.is_staff %}
+                <p>{% trans "STAFF" %}</p>
+                <a href="{% url 'books' %}">{% trans "All datasets" %}</a><br/>
+                <a href="{% url 'all-borrowed' %}">{% trans "All borrowed" %}</a><br/>
+                {% endif %}
+            </div>
+        </div>
+        <div style="display:flex;" class="
+                col-12
+                col-sm-9
+                col-md-9
+                col-lg-9">
+            <div class="profile-head">
+                <h5>
+                    {% trans "Welcome" %}, {% if user.get_full_name %} {{ user.get_full_name }} {% else %} {{ user.get_username }} {% endif %}!
+                </h5>
+                <h6>
+                    {% if user.profile.organization %}{{ user.profile.organization }}, {{ user.profile.position }} {% endif %}
+                </h6>
+                <br>
+                <br>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">{% trans "About " %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">{% trans "Edit" %}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-end">
+        <div class="profile-info
+                col-12
+                col-sm-9
+                col-md-9
+                col-lg-9">
+            <div class="tab-content profile-tab" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="row">
+                        <div class="
+                        col-4
+                        col-md-4">
+                            <label>{% trans "Login" %}:</label>
+                        </div>
+                        <div class="
+                        col-4
+                        col-md-6">
+                            <p>{{ user.get_username }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4
+                        col-md-4">
+                            <label>{% trans "Email" %}:</label>
+                        </div>
+                        <div class="col-4
+                        col-md-6">
+                            <p>{{ user.email }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4
+                        col-md-4">
+                            <label>{% trans "Name" %}:</label>
+                        </div>
+                        <div class="col-5
+                        col-md-6">
+                            <p>{% if user.first_name and user.last_name %} {{ user.first_name }} {{ user.last_name }} {% else %} . . . {% endif %}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4
+                        ol-md-4">
+                            <label>{% trans "Organization" %}:</label>
+                        </div>
+                        <div class="col-4
+                        col-md-6">
+                            <p>{% if user.profile.organization %} {{ user.profile.organization }} {% else %} . . . {% endif %}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4
+                        col-md-4">
+                            <label>{% trans "Position" %}:</label>
+                        </div>
+                        <div class="col-4
+                        col-md-6">
+                            <p>{% if user.profile.position %} {{ user.profile.position }} {% else %} . . . {% endif %} </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <p>{% trans "You can edit your account using the following form" %}:</p>
+                    <div class="row">
+                        <div class="
+                        col-4
+                        col-sm-6
+                        col-md-6
+                        col-lg-10">
+                            <form action="{% url 'index' %}" method="post" enctype="multipart/form-data">
+                                <div class="row">
+                                    <div class="
+                                    сol-12
+                                    col-sm-10
+                                    col-md-9
+                                    col-lg-4">
+                                        {{ user_form.as_p}}
+                                    </div>
+                                    <div class="
+                                    сol-12
+                                    col-sm-10
+                                    col-md-9
+                                    col-lg-4">
+                                        {{ profile_form.as_p }}
+                                    </div>
+                                    {% csrf_token %}
+                                </div>
+                                <p> <button type="submit" value="Submit" class="btn btn-outline-primary mt-2">{% trans "Save changes" %}</button></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>
+
+
+<div class="col-sm-1
+                col-md-1
+                col-lg-1">
+    <div class="profile-img">
+        {% if user.profile.photo %} <img class="round" src="/media/{{ user.profile.photo }}" style="height:200px; width:200px" alt=""/>
+        {% else %} <img class="round" src="https://2004000.ru/common/i/empty_staff.png" style="height:200px; width:200px" alt=""/> {% endif %}
+    </div>
+</div>

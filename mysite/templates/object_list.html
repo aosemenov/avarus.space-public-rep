@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load cms_tags menu_tags sekizai_tags %} {% load i18n %}
+
+{% render_block "css" %}
+
+{% block content %}
+{% placeholder "content" %}
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>" type="text/javascript"></script>
+    <title>jQuery UI Resizable - Default functionality</title>
+    <link rel="stylesheet" type="text/css" href="../../media/object_list.css">
+    <script id="html-1" type="text/template"></script>
+</head>
+<body>
+<div class="header-footer header-footer_hidden">
+    <div class="header-footer__search-form">
+        {% trans "Search " as the_search %}
+        <form class="search-form">
+            <input class="search-form__input search-form__input_position_footer" id="elastic_mobile" type="text" placeholder="{{ the_search }}">
+            <div class="search-form__icon search-form__icon-position_footer">
+                <a class="search-form__icon-link" href="#">
+                    <svg class="search-form__icon-image" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 20L15.0962 15.0962M15.0962 15.0962C16.2725 13.9199 17 12.2949 17 10.5C17 6.91015 14.0899 4 10.5 4C6.91015 4 4 6.91015 4 10.5C4 14.0899 6.91015 17 10.5 17C12.2949 17 13.9199 16.2725 15.0962 15.0962Z" stroke="#768298" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="main">
+    <div class="container2">
+        <div id="map"></div>
+    </div>
+    <div class="resize">
+        <div class="menu_list" id="menu_list">
+        </div>
+    </div>
+    <div class="search-box">
+        {% trans "Search" as the_search %}
+        <input type="text" class="search-txt" id="elastic" placeholder="{{ the_search }}">
+        <a href="#" class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></a>
+    </div>
+    <div class="map-box">
+        <a href="" class="map-box-btn"><i class="fa fa-search" aria-hidden="true"></i></a>
+    </div>
+</div>
+<input hidden value="{{ json_data }}" id="suy">
+
+<script src="https://yandex.st/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
+<script src="../../media/groups.js" type="text/javascript"></script>
+<script src="../../media/object_list.js" type="text/javascript"></script>
+</body>
+
+<footer class="mastfoot text-center">
+    {% static_placeholder "Footer" %}
+    <p>{% trans "Designed for" %} <a href="http://www.ras.ru/">{% trans "The Russian Academy of Sciences" %}</a>  {% trans "by" %} <a href="https://cabinet.miem.hse.ru/#/project/1">{% trans "MIEM HSE" %}</a></p>
+    <p>{% trans "Supported by" %} RFBR 18-04-01010</p>
+</footer>
+</html>
+
+{% endblock content %}
+
+{% render_block "js" %}

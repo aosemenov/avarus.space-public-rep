@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% load cms_tags %}
+{% block content %}
+{% placeholder "content" %}
+<div id="feedback" class="feedback" >
+  <form action="{% url 'feedback_view' %}" method='POST'>
+    {% csrf_token %}
+    <h5>Data request </h5>
+
+    <div class="form-group">
+      <label form="Name1">Full name*</label>
+      {% if user.get_full_name %}
+      <input value="{{ user.get_full_name }}" name="name" onkeyup="checkParams()" class="form-control" id="Name1" aria-describedby="emailHelp" placeholder="
+Enter your name">
+      {% else %}
+      <input name="name" onkeyup="checkParams()" class="form-control" id="Name1" aria-describedby="emailHelp" placeholder="
+Enter your name">
+      {% endif %}
+    </div>
+
+
+    <div class="form-group">
+      <input hidden value="{% page_attribute 'page_title' %}" onkeyup="checkParams()" name="name_space" class="form-control" id="Name_space1" aria-describedby="emailHelp" placeholder="
+Enter location">
+    </div>
+    <div class="form-group">
+      <input hidden value="{{ user.get_username }}" onkeyup="checkParams()" name="customer_login" class="form-control" id="Login1" aria-describedby="emailHelp" placeholder="
+Enter Login">
+    </div>
+
+    <div class="form-group">
+      <label form="Organization1">Organization*</label>
+      {% if user.profile.organization %}
+      <input value="{{ user.profile.organization }}" name="organization" class="form-control" onkeyup="checkParams()" id="Organization1" aria-describedby="emailHelp" placeholder="
+Enter Organization">
+      {% else %}       <input name="organization" class="form-control" onkeyup="checkParams()" id="Organization1" aria-describedby="emailHelp" placeholder="
+Enter Organization">
+      {% endif %}
+    </div>
+
+    <div class="form-group">
+      <label form="Position1">Position*</label>
+      {% if user.profile.position %}
+      <input value="{{ user.profile.position }}" name="position" class="form-control" onkeyup="checkParams()" id="Position1" aria-describedby="emailHelp" placeholder="
+Enter Position">
+      {% else %}
+      <input name="position" class="form-control" onkeyup="checkParams()" id="Position1" aria-describedby="emailHelp" placeholder="
+Enter Position">
+      {% endif %}
+
+    </div>
+
+    <div class="form-group">
+      <label form="InputEmail1">Email*</label>
+      <input value="{{ user.email }}" type="email" name="email" class="form-control" onkeyup="checkParams()" id="Email1" aria-describedby="emailHelp" placeholder="Enter Email">
+    </div>
+
+    <div class="form-group">
+      <label form="Description1">Purpose*</label>
+      <textarea name="description" class="form-control" onkeyup="checkParams()" id="Description1" rows="3" placeholder="Describe specific plans for using the data..."></textarea>
+      <!--        <input  name="description" class="form-control" aria-describedby="emailHelp" placeholder="Enter Description">-->
+
+    </div>
+    <button type="submit" id="submit" class="btn btn-primary mt-2" disabled>Submit</button>
+  </form>
+
+</div>
+{% endblock content %}
+
+

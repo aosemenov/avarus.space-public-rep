@@ -1,0 +1,196 @@
+
+{% extends "base.html" %}{% load cms_tags menu_tags sekizai_tags %} {% load i18n %}
+{% load cms_tags %}
+{% block content %}
+{% placeholder "content" %}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../../../media/statistics.css">
+    <link rel="stylesheet" type="text/css" href="../../../media/analysis.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container_statistics">
+    <div class="row justify-content-center">
+        <div class="row">
+            <div class="item-block col-xs-12
+                col-sm-12
+                col-md-4
+                col-lg-3">
+                <div class="card">
+                    <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">{% trans "Statistics" %}</button>
+                        <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">{% trans "Analytics" %}</button>
+                        <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">{% trans "Species analysis" %}</button>
+                    </div>
+                    <hr>
+                    <div class="card-body">
+                        <h5 class="card-title">{% trans "AVA Data Dictionary" %}</h5>
+                        <p class="card-text-dictionary">
+                            {% trans "The dictionary contains a transcript of the names in the datasets" %}
+                        </p>
+                        <a type="submit" value="Submit" class="button-dictionary btn btn-xs btn-outline-success mt-0" href="/media/upload_datasets/ava_ak_headerdata_database_dictionary.xlsx" download>{% trans "Download" %}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item-block tab-content
+                col-xs-12
+                col-sm-12
+                col-md-7
+                col-lg-8" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                    <div id="result-detail" class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{% trans "Available datasets" %}</h5>
+                            {% if book_list or bookinstance_list %}
+                            <form action="{% url 'statistics-column' %}"  method='POST'>
+                                {% csrf_token %}
+                                <div class="list-group statistics-lst" style="overflow-y:scroll; overflow-x:hidden">
+                                    {% for book in book_list %}
+                                    <label  class="list-group-item ">
+                                        <input class="form-check-input me-1" name="dataset" type="radio" checked
+                                               value="{{book.dataset}} {{book.dataset_env}}">{{book.title}}
+                                    </label>
+                                    {% endfor %}
+                                    {% for datasetinst in bookinstance_list %}
+                                    <label class="list-group-item ">
+                                        <input class="form-check-input me-1" id="dataset" name="dataset" type="radio" checked
+                                               value="{{datasetinst.book.dataset}} {{datasetinst.book.dataset_env}}">{{datasetinst.book.title}}
+                                    </label>
+                                    {% endfor %}
+                                </div>
+                                <button type="submit" value="Submit" class="btn btn-outline-primary mt-5">{% trans "Continue" %}</button>
+                                {% else %}
+                                <p class="text-success">{% trans "There are no available datasets" %}</p>
+                                {% endif %}
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                    <div id="info-detail" class="container_analysis_type">
+                        <div id="analysis_cor">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">{% trans "Correlation analysis" %}</h5>
+                                    <p class="card-text">{% trans "Correlation analysis is a statistical method used to evaluate the strength of relationship between two quantitative variables." %}</p>
+                                    <label><b>{% trans "Type of analysis" %}:</b> {% trans "Correlation" %}</label>
+                                    <br>
+                                    <a class="btn btn-outline-danger mt-2" href="{% url 'cor-analysis' %}">{% trans "Get Analysis" %}</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="analysis_comp" class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">{% trans "Principal component analysis" %}</h5>
+                                    <p class="card-text">{% trans "Principal component analysis is the process of computing the principal components and using them to perform a change of basis on the data, sometimes using only the first few principal components and ignoring the rest." %}</p>
+                                    <label><b>{% trans "Type of analysis" %}:</b> PCA</label>
+                                    <br>
+                                    <a class="btn btn-outline-danger mt-2" href="{% url 'comp-analysis' %}">{% trans "Get Analysis" %}</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="analysis_fact" class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">{% trans "Factor analysis" %}</h5>
+                                    <p class="card-text">{% trans "A multidimensional method used to study the relationships between the values of variables" %}</p>
+                                    <label><b>{% trans "Type of analysis" %}:</b> {% trans "Factor" %}</label>
+                                    <br>
+                                    <a  class="btn btn-outline-danger mt-2" href="{% url 'factor-analysis' %}">{% trans "Get Analysis" %}</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="analysis_clust" class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">{% trans "Cluster analysis" %}</h5>
+                                    <p class="card-text">{% trans "A multidimensional statistical procedure that collects data that contains information about a selection of objects, and then organizes the objects into relatively homogeneous groups" %}</p>
+                                    <label><b>{% trans "Type of analysis" %}:</b> {% trans "Cluster" %}</label>
+                                    <br>
+                                    <a class="btn btn-outline-danger mt-2" href="{% url 'jacquard-analysis' %}">{% trans "The Jacquard method" %}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{% trans "Available groups" %}</h5>
+                            <form action="{% url 'species-result' %}"  method='POST'>
+                                {% csrf_token %}
+                                <div class="list-group statistics-lst" style="overflow-y:scroll; overflow-x:hidden">
+                                    <label class="list-group-item ">
+                                        <input class="form-check-input me-1" name="group" type="radio"
+                                               value="Total_plants" checked>Total plants species
+                                    </label>
+                                    <label class="list-group-item ">
+                                        <input class="form-check-input me-1" name="group" type="radio"
+                                               value="Vascular">Vascular plants
+                                    </label>
+                                    <label class="list-group-item ">
+                                        <input class="form-check-input me-1" name="group" type="radio"
+                                               value="Moss">Mosses
+                                    </label>
+                                    <label class="list-group-item ">
+                                        <input class="form-check-input me-1" name="group" type="radio"
+                                               value="Liverwort">Liverworts
+                                    </label>
+                                    <label hidden class="list-group-item ">
+                                        <input  class="form-check-input me-1" name="dataset" type="radio" checked
+                                                value="datasets/sp/datasets_with_species_richness.xlsx">
+                                    </label>
+                                    <label class="list-group-item ">
+                                        <input class="form-check-input me-1" name="group" type="radio"
+                                               value="Lichen">Lichens
+                                    </label>
+                                    <label class="list-group-item ">
+                                        <input class="form-check-input me-1" name="group" type="radio"
+                                               value="Unknow">Unknown group
+                                    </label>
+                                </div>
+                                <button type="submit" value="Submit" class="btn btn-outline-primary mt-5">{% trans "Continue" %}</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{% trans "Available datasets" %}</h5>
+                            {% if book_list or bookinstance_list %}
+                            <form action="{% url 'plants-amount' %}"  method='POST'>
+                                {% csrf_token %}
+                                <div class="list-group statistics-lst" style="overflow-y:scroll; overflow-x:hidden">
+                                    {% for book in book_list %}
+                                    <label  class="list-group-item ">
+                                        <input class="form-check-input me-1" name="dataset" type="radio" checked
+                                               value="{{book.dataset}}">{{book.title}}
+                                    </label>
+                                    {% endfor %}
+                                    {% for datasetinst in bookinstance_list %}
+                                    <label class="list-group-item ">
+                                        <input class="form-check-input me-1" name="dataset" type="radio" checked
+                                               value="{{datasetinst.book.dataset}}">{{datasetinst.book.title}}
+                                    </label>
+                                    {% endfor %}
+                                </div>
+                                <button type="submit" value="Submit" class="btn btn-outline-primary mt-5">{% trans "Continue" %}</button>
+                                {% else %}
+                                <p class="text-success">{% trans "There are no available datasets" %}</p>
+                                {% endif %}
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>
+
+{% endblock content %}
+

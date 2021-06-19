@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+{% load cms_tags menu_tags sekizai_tags %} {% load i18n %}
+
+{% block content %}
+{% placeholder "content" %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../../../media/analysis.css">
+</head>
+<body>
+<div class="dataset_detail col-md-4">
+<!--    <div class="profile-head"><h5><b>{{ dataset.title }}</b></h5></div>-->
+<!--    <hr>-->
+<!--    <p><strong>Author:</strong> <a>{{ dataset.dataset }}</a></p>-->
+
+    <div style="margin-left:20px;margin-top:20px">
+
+        <div style="display:block" id="choose_list" class="container_analysis_list col-5 ">
+            <div class="tab-content">
+                <div  class="tab-pane active" id="databases" role="tabpanel">
+                    <div class="card-header">List of available Datasets</div>
+                    <div style="overflow-y:hidden" class="list-group">
+                        <form action="{% url 'dataset-detail-3' %}" method="post">
+                            {% csrf_token %}
+                            {% for field in form %}
+                            <div style="overflow-y:hidden" class="list-group">
+                                <label class="list-group-item" >
+                                    {{ field.label_tag }}{{ field }}
+                                </label>
+                            </div>
+                            {% endfor %}
+                            <input type="submit" value="Submit" >
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
+{% endblock content %}

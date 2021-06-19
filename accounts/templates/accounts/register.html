@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+{% load i18n %}{% load cms_tags menu_tags sekizai_tags %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+	<style>
+		body,
+		html {
+			margin: 0;
+			padding: 0;
+			height: calc(100vh - 200px);
+		}
+		.user_card {
+			width: 350px;
+			margin-top: auto;
+			margin-bottom: auto;
+			background: white;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			padding: 10px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			border-radius: 5px;
+
+		}
+
+		.form_container {
+			margin-top: 20px;
+		}
+
+		#form-title{
+			color: black;
+		}
+		.login_btn {
+			width: 100%;
+			background: #33ccff !important;
+			color: white !important;
+		}
+		.login_btn:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+		.login_container {
+			padding: 0 2rem;
+		}
+		.input-group-text {
+			background: white !important;
+			color: white !important;
+			border-right: 1px  !important;
+			border-radius: 0.25rem 0 0 0.25rem !important;
+		}
+		.input_user,
+		.input_pass:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+		.fa, .fas{
+			color: black!important;
+		}
+
+	</style>
+
+</head>
+<body>
+<div class="container h-100">
+	<div class="d-flex justify-content-center h-100">
+		<div class="user_card">
+			<div class="d-flex justify-content-center">
+				<h3 id="form-title">{% trans "REGISTER ACCOUNT" %}</h3>
+			</div>
+			<div class="d-flex justify-content-center form_container">
+
+				<form method="POST" action="">
+					{% csrf_token %}
+					<div class="input-group mb-2">
+						<div class="input-group-append">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						{{form.username}}
+					</div>
+					<div class="input-group mb-2">
+						<div class="input-group-append">
+							<span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
+						</div>
+						{{form.email}}
+					</div>
+					<div class="input-group mb-2">
+						<div class="input-group-append">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						{{form.password1}}
+					</div>
+					<div class="input-group mb-2">
+						<div class="input-group-append">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						{{form.password2}}
+					</div>
+					<div class="d-flex justify-content-center mt-3 login_container">
+						{% trans "Register Account" as the_register_account %}
+						<input class="btn login_btn" type="submit" value="{{ the_register_account }}">
+					</div>
+				</form>
+			</div>
+			<div class="d-flex justify-content-center">{{message}}{{message_error}}</div>
+			<div class="mt-4">
+				<div class="d-flex justify-content-center links">
+					{% trans "Already have an account?" %} <a href="{% url 'login' %}" class="ml-2">{% trans "Sign In" %}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% trans "Username.." as the_register_name %}
+{% trans "Email.." as the_email_name %}
+{% trans "Enter password..." as the_password_name %}
+{% trans "Re-enter Password..." as the_repassword_name %}
+
+<script>
+
+	var form_fields = document.getElementsByTagName('input')
+	form_fields[2].placeholder='{{ the_register_name }}';
+	form_fields[3].placeholder='{{ the_email_name }}';
+	form_fields[4].placeholder='{{ the_password_name }}';
+	form_fields[5].placeholder='{{ the_repassword_name }}';
+	for (var field in form_fields){
+		form_fields[field].className += ' form-control'
+	}
+</script>
+</body>
+<footer class="mastfoot text-center">
+	{% static_placeholder "Footer" %}
+	<p>{% trans "Designed for" %} <a href="http://www.ras.ru/">{% trans "The Russian Academy of Sciences" %}</a>  {% trans "by" %} <a href="https://cabinet.miem.hse.ru/#/project/1">{% trans "MIEM HSE" %}</a></p>
+	<p>{% trans "Supported by" %} RFBR 18-04-01010</p>
+</footer>
+</html>
+{% endblock content %}

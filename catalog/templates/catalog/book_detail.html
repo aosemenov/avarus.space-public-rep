@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<div class="container emp-profile">
+    <div class="row row-head">
+        <div class="
+                col-5
+                col-sm-3
+                col-md-3
+                col-lg-3">
+            <div class="profile-work">
+                {% if   user.is_authenticated %}
+                <p>{% trans "HOME" %}</p>
+                <a href="{% url 'index' %}">{% trans "Profile" %}</a>
+                <p>{% trans "RECEIVED DATASETS" %}</p>
+                <a href="{% url 'my-borrowed' %}">{% trans "My datasets" %}</a><br/>
+                <a href="{% url 'my-requests' %}">{% trans "My requests" %}</a><br/>
+                <p>{% trans "LOGOUT" %}</p>
+                <a href="{% url 'logout'%}">{% trans "Exit" %}</a>
+                {% endif %}
+                {% if user.is_staff %}
+                <p>{% trans "STAFF" %}</p>
+                <a href="{% url 'books' %}">{% trans "All datasets" %}</a><br/>
+                <a href="{% url 'all-borrowed' %}">{% trans "All borrowed" %}</a><br/>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="profile-head"><h5><b>{{ book.title }}</b></h5></div>
+            <hr>
+            <p><strong>{% trans "Author" %}:</strong> <a>{{ book.author }}</a></p>
+            {%  if bool.summary %} <p><strong>{% trans "Description" %}:</strong> {{ book.summary }}</p> {% else %} {% endif %}
+            <a type="submit" value="Submit" class="btn  btn-outline-primary  mt-2" href="/media/upload_datasets/{{book.specifications}}" download>{% trans "Download archive" %}</a>
+            <div style="margin-left:20px;margin-top:20px">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+</div>
+{% endblock %}

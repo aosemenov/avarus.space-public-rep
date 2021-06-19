@@ -1,0 +1,7 @@
+*.r
+*.R
+*.db
+*.xlsx
+*.txt
+media/
+mysite/settings.py

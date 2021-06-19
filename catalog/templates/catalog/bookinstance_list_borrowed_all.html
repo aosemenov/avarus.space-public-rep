@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<style>
+    table tbody {counter-reset: rowNumber;}
+    table tbody tr {counter-increment: rowNumber;}
+    table tbody tr th:first-child::after {content: counter(rowNumber);}
+</style>
+<div class="container emp-profile">
+    <div class="row row-head">
+        <div class="
+                col-5
+                col-sm-3
+                col-md-3
+                col-lg-3">
+            <div class="profile-work">
+                {% if   user.is_authenticated %}
+                <p>{% trans "HOME" %}</p>
+                <a href="{% url 'index' %}">{% trans "Profile" %}</a>
+                <p>{% trans "RECEIVED DATASETS" %}</p>
+                <a href="{% url 'my-borrowed' %}">{% trans "My datasets" %}</a><br/>
+                <a href="{% url 'my-requests' %}">{% trans "My requests" %}</a><br/>
+                <p>{% trans "LOGOUT" %}</p>
+                <a href="{% url 'logout'%}">{% trans "Exit" %}</a>
+                {% endif %}
+                {% if user.is_staff %}
+                <p>{% trans "STAFF" %}</p>
+                <a href="{% url 'books' %}">{% trans "All datasets" %}</a><br/>
+                <a href="{% url 'all-borrowed' %}">{% trans "All borrowed" %}</a><br/>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-12
+                col-sm-9
+                col-md-9
+                col-lg-9">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">№</th>
+                    <th scope="col">{% trans "Dataset name" %}</th>
+                    <th scope="col">{% trans "User (login)" %}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% if bookinstance_list %}{% for bookinst in bookinstance_list %}
+                <tr>
+                    <th scope="row"></th>
+                    <td><a href="{% url 'book-detail' bookinst.book.pk %}">{{bookinst.book.title}}</a></td>
+                    <td>{% if user.is_staff %} {{ bookinst.borrower }}{% endif %}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            {% else %}
+            <p class="text-success">{% trans "There are no datasets borrowed" %}</p>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+
